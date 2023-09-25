@@ -1,0 +1,138 @@
+@import '_variables';
+
+@mixin bg-opacity($color, $opacity) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+@function rem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
+ }
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+//Z-index
+@function z($name, $z-indexes-list: $z-indexes) {
+  @if index($z-indexes-list, $name) {
+  @return (length($z-indexes-list) - index($z-indexes-list, $name)) + 1;
+  }
+   @else {
+  @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes-list}';
+  
+  @return null;
+  }
+}
+
+ // media query
+@mixin mQmax($arg) {
+  @media screen and (max-width:$arg){
+  @content;
+  }
+}
+
+@mixin mQmin($arg) {
+  @media screen and (min-width:$arg){
+  @content;
+  }
+}
+
+@mixin mQrange($max, $min) {
+  @media only screen and (max-width: $max) and (min-width: $min) {
+  @content;
+  }
+}
+  
+  // common shapes
+@mixin dotCircle($circle,$bgColor) {
+  position: absolute;
+  border-radius: 100%;
+  top:0;
+  right: 0;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $white;
+  background-color: $bgColor;
+  width: $circle;
+  height: $circle;
+}
+
+@mixin arrowRight($bdr-t,$bdr-l,$color){
+  &:after{
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: $bdr-t solid transparent;
+  border-left: $bdr-l solid $color;
+  border-bottom: $bdr-t solid transparent;
+  display: inline-block;
+  }
+}
+
+@mixin arrowBottom($bdr-t,$bdr-l,$color){
+  &:after{
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: $bdr-t solid $color;
+  border-left: $bdr-l solid transparent;
+  border-right: $bdr-l solid transparent;
+  display: inline-block;
+  }
+}
+  
+  // transitions
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+  //search box
+@mixin searchBox($mxwidth,$background) {
+  width: 100%;
+  background-color: $background;
+  max-width: $mxwidth;
+  border-radius: 2px;
+}
+
+@mixin searchButton(){
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background:transparent;
+  border:none;
+}
+
+@mixin hvrBdrBtm($height,$color) {
+  &::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: $height;
+  background:$color;
+  bottom:0;
+  
+  }
+}
+  //Flex
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @content;
+}
+
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+  @content;
+}
+
+@mixin bg-opacity($color, $opacity) {
+  background: $color;
+  background: rgba($color, $opacity);
+  }

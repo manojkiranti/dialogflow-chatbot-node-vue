@@ -1,0 +1,42 @@
+
+
+.vsa-item__trigger:focus, .vsa-item__trigger:hover{
+    background-color: #f2f2f2!important;
+    color: #2e2e2e!important;
+}
+.vsa-item__trigger{
+    background-color: #f2f2f2!important;
+    color: #2e2e2e!important;
+}
+
+.vsa-item__trigger__icon--is-default{
+    transform: scale(1)!important;
+    width: 30px;
+}
+.vsa-item__trigger{
+    padding: 2px 15px!important;
+    cursor: pointer;
+}
+.vsa-item__trigger__content {
+    font-weight: 400!important;
+    font-size: 12px!important;
+    line-height: 18px;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.vsa-item__trigger__icon--is-default:after{
+    display: none;
+}
+.vsa-item__trigger__icon--is-default:before{
+    font-family: "Material Icons";
+    content: "keyboard_arrow_down"!important;
+    font-family: "Material Icons";
+    transform: none!important;
+    font-size: 24px;
+    background: none!important;
+    top: 5px!important;
+}
+.vsa-item__trigger__icon--is-default.vsa-item__trigger__icon--is-active{
+    transform: rotate(180deg) scale(1)!important;
+}

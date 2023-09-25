@@ -1,0 +1,14 @@
+@import "./abstract/variables";
+@import "./base/_config";
+@import "./abstract/mixin";
+@import "./abstract/functions";
+
+// components
+@import "./components/header";
+@import "./components/banner";
+@import "./components/main_body";
+@import "./components/card";
+@import "./components/accordion";
+@import "./components/textbox";
+// pages
+@import "./pages/chatbot";

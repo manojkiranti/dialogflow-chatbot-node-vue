@@ -1,0 +1,30 @@
+
+
+.text-box-content{
+    margin: 8px 0 15px 0;
+    .text-wrap{
+        background: rgba(0, 0, 0, 0.05);
+        color: #666;
+        padding: 8px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        font-weight: 300;
+        position: relative;
+        max-width: 270px;
+        &:after{
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: -8px;
+            top: 0;
+            border-top: 0 solid transparent;
+            border-right: 14px solid #f2f2f2;
+            border-bottom: 12px solid transparent;
+        }
+    }
+    ol {
+        padding-left: 12px;
+    }
+    
+}
